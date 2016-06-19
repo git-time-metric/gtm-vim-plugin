@@ -5,6 +5,12 @@
 if exists('g:gtm_plugin_loaded') || &cp
   finish
 endif
+
+if executable('gtm') == 0 
+  echo "Unable to locate gtm executable, please make sure it's installed and on your path"
+  finish
+endif
+
 let g:gtm_plugin_loaded = 1
 
 let s:last_update = 0
