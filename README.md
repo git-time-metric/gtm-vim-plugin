@@ -1,7 +1,20 @@
-# Vim Git Time Metrics (GTM) Plugin
+# Vim Git Time Metrics (GTM) plug-in
 ### Simple, seamless, lightweight time tracking for all your git projects
 
-GTM, or GIT Time Metrics, is a utility that tracks activity on files that are part of a GIT repository 
-and aggregates that activity into useful time information. It tracks this time through the use of editor 
-plugins and by using GIT post-commit hooks. These timings and data are stored in the local GIT repo in GIT notes. 
-This plugin will track this data for projects that are edited with the Vim editor.
+Git Time Metrics (GTM) is a tool to automatically track time spent reading and working on code that you store in a Git repository. By installing GTM and using supported plug-ins for your favorite editors, you can immediately realize better insight into how you are spending your time and on what files.  
+
+The easy way to install this plug-in is to use your favorite Vim plug-in manager. 
+
+**Plug**
+`Plug 'git-time-metric/gtm-vim-plugin'`
+
+**NeoBundle**
+`NeoBundle 'git-time-metric/gtm-vim-plugin'`
+
+**Vundle**
+`Plugin 'git-time-metric/gtm-vim-plugin'`
+
+**Pathogen**
+`git clone https://github.com/git-time-metric/gtm ~/.vim/bundle/gtm`
+
+Checkout the main [GTM repository](https://github.com/git-time-metric/gtm) for more information.
