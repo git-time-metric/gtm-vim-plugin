@@ -17,4 +17,4 @@ The easy way to install this plug-in is to use your favorite Vim plug-in manager
 **Pathogen**
 `git clone https://github.com/git-time-metric/gtm ~/.vim/bundle/gtm`
 
-Checkout the main [GTM repository](https://github.com/git-time-metric/gtm) for more information.
+In addition to the plug-in you will need to install GTM.  Checkout the main [GTM repository](https://github.com/git-time-metric/gtm) for more information.

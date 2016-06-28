@@ -6,8 +6,10 @@ if exists('g:gtm_plugin_loaded') || &cp
   finish
 endif
 
+let s:no_gtm_err = 'GTM exe not found, install GTM or update path, see https://www.github.com/git-time-metric/gtm'
+
 if executable('gtm') == 0 
-  echo "Unable to locate gtm executable, please make sure it's installed and on your path"
+  echomsg s:no_gtm_err
   finish
 endif
 
@@ -16,13 +18,16 @@ let g:gtm_plugin_loaded = 1
 let s:last_update = 0
 let s:last_file = ""
 let s:update_interval = 30
-let s:cmd = "silent !gtm record"
+let s:cmd = "gtm record"
 
 function! s:record()
   let fpath = expand("%:p")
   " record if file path has changed or last update is greater than update_interval
   if s:last_file != fpath || localtime() - s:last_update > s:update_interval
-    exec s:cmd shellescape(fpath)
+    let output=system(s:cmd . " " . shellescape(fpath))
+    if v:shell_error
+      echomsg s:no_gtm_err
+    endif
     let s:last_update = localtime()
     let s:last_file = fpath
   endif
