@@ -14,12 +14,15 @@ Installing GTM is a two step process.  First, it's recommended you install the G
     - **NeoBundle** `NeoBundle 'git-time-metric/gtm-vim-plugin'`
     - **Vundle** `Plugin 'git-time-metric/gtm-vim-plugin'`
     - **Pathogen** `git clone https://github.com/git-time-metric/gtm ~/.vim/bundle/gtm`
-     
+
 **Note** - to enable time tracking for a Git repository, you need to initialize it with `gtm init` otherwise it will be ignored by GTM. This is done via the command line.
 ```
 > cd /path/to/your/project
 > gtm init
 ```
+
+Consult the [README](https://github.com/git-time-metric/gtm/blob/master/README.md) and [Wiki](https://github.com/git-time-metric/gtm/wiki) for more information.
+
 # Features
 
 ### Status Bar
@@ -52,8 +55,6 @@ autocmd User AirlineAfterInit call AirlineInit()
 ```
 
 **Note** - the time shown is based on the file's path and the Git repository it belongs to. You can have several files open that belong to different Git repositories. The status bar will display the time for the current file's Git repository.  Also keep in mind, a Git repository must be initialized for time tracking in order to track time.
-
-Consult the [README](https://github.com/git-time-metric/gtm/blob/master/README.md) and [Wiki](https://github.com/git-time-metric/gtm/wiki) for more information.
 
 ### Command Line Interface
 
