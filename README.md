@@ -14,14 +14,12 @@ Installing GTM is a two step process.  First, it's recommended you install the G
     - **NeoBundle** `NeoBundle 'git-time-metric/gtm-vim-plugin'`
     - **Vundle** `Plugin 'git-time-metric/gtm-vim-plugin'`
     - **Pathogen** `git clone https://github.com/git-time-metric/gtm ~/.vim/bundle/gtm`
-
+     
 **Note** - to enable time tracking for a Git repository, you need to initialize it with `gtm init` otherwise it will be ignored by GTM. This is done via the command line.
 ```
 > cd /path/to/your/project
 > gtm init
-
 ```
-
 # Features
 
 ### Status Bar
