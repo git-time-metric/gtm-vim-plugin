@@ -7,14 +7,17 @@ if exists('g:gtm_plugin_loaded') || &cp
 endif
 let g:gtm_plugin_loaded = 0
 
-let s:gtm_ver_req = '>= 1.0-beta.6'
+let s:gtm_ver_req = '>= 1.0-beta.7'
 
-let s:no_gtm_err = 'GTM exe not found, install GTM or update path, see https://www.github.com/git-time-metric/gtm'
-let s:gtm_ver_err = 'GTM exe is out of date, please install the latest GTM, see https://www.github.com/git-time-metric/gtm'
+let s:no_gtm_err = 'GTM exe not found, install GTM or update your path'
+let s:gtm_ver_err = 'GTM exe is out of date and may not work properly, please install the latest GTM exe'
+let s:gtm_url = 'see https://www.github.com/git-time-metric/gtm'
 
 if executable('gtm') == 0
+  echomsg '.'
   echomsg s:no_gtm_err
-  echomsg "GTM plug-in NOT LOADED"
+  echomsg s:gtm_url
+  echomsg '.'
   finish
 endif
 
@@ -31,9 +34,10 @@ function! s:verify(ver)
 endfunction
 
 if s:verify(s:gtm_ver_req) == 0
+  echomsg '.'
   echomsg s:gtm_ver_err
-  echomsg "GTM plug-in NOT LOADED"
-  finish
+  echomsg s:gtm_url
+  echomsg '.'
 endif
 
 " plug-in is loading successfully
