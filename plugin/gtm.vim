@@ -33,7 +33,9 @@ function! s:verify(ver)
     return 1
 endfunction
 
-if s:verify(s:gtm_ver_req) == 0
+let g:gtm_verify_version = get(g:, 'gtm_verify_version', 1)
+
+if g:gtm_verify_version == 1 && s:verify(s:gtm_ver_req) == 0
   echomsg '.'
   echomsg s:gtm_ver_err
   echomsg s:gtm_url
