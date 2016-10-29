@@ -1,6 +1,7 @@
-![GTM Logo](https://raw.githubusercontent.com/git-time-metric/gtm-atom-plugin/master/lib/GTMLogo-128.png)
-# Vim Git Time Metrics (GTM) plug-in
-### Simple, seamless, lightweight time tracking for all your git projects
+<div align="center"><img src="https://cloud.githubusercontent.com/assets/630550/19619834/43c460dc-9835-11e6-8652-1c8fff91cf02.png" alt="GTM Logo" height="115" width="275"></div>
+# <div align="center">Git Time Metric</div>
+### Vim Git Time Metrics (GTM) plug-in
+#### Simple, seamless, lightweight time tracking for all your git projects
 
 Git Time Metrics (GTM) is a tool to automatically track time spent reading and working on code that you store in a Git repository. By installing GTM and using supported plug-ins for your favorite editors, you can immediately realize better insight into how you are spending your time and on what files.
 
@@ -62,49 +63,33 @@ Use the command line to report on time logged for your commits.
 
 Here are some examples of insights GTM can provide you.
 
-**Git commits with time spent**
-```
-> gtm report -total-only -n 3
+<pre>$ gtm report -today -author Schenk
 
-9361c18 Rename packages
-Sun Jun 19 09:56:40 2016 -0500 Michael Schenk  34m 30s
+7129f00 <b>Remove post processing of status</b>
+Fri Sep 09 20:45:03 2016 -0500 <b>gtm-vim-plugin</b> Michael Schenk
 
-341bd77 Vagrant file for testing on Linux
-Sun Jun 19 09:43:47 2016 -0500 Michael Schenk  1h 16m  0s
+       20m 40s  53% [m] plugin/gtm.vim
+       18m  5s  46% [r] Terminal
+           15s   1% [m] .gitignore
+       39m  0s          <b>gtm-vim-plugin</b> </pre>
 
-792ba19 Require a 40 char SHA commit hash
-Thu Jun 16 22:28:45 2016 -0500 Michael Schenk  1h  1m  0s
-```
+<pre>$ gtm report -format timeline-hours -last-week -author Schenk
 
-**Git commits with detailed time spent by file**
-```
-> gtm report
+             <b>00.01.02.03.04.05.06.07.08.09.10.11.12.01.02.03.04.05.06.07.08.09.10.11.</b>
+             ------------------------------------------------------------------------
+<b>Sat Oct 08</b> |                                                          ▃▃▃             |       <b>17m  0s</b>
+             ------------------------------------------------------------------------
+<b>Sun Oct 09</b> |                      ▁▁▁   █████████▃▃▃██████▂▂▂   ▂▂▂                   |    <b>5h 33m  0s</b>
+             ------------------------------------------------------------------------
+<b>Tue Oct 11</b> |                                                       ▂▂▂         ▂▂▂    |       <b>16m  0s</b>
+             ------------------------------------------------------------------------
+<b>Fri Oct 14</b> |                                     ▂▂▂                                  |       <b>13m  0s</b>
+             ------------------------------------------------------------------------
+<b>Sat Oct 15</b> |                            ███▇▇▇███▇▇▇███▁▁▁▇▇▇▂▂▂▁▁▁▃▃▃▆▆▆███▇▇▇       |    <b>8h 11m  0s</b>
+             ------------------------------------------------------------------------
+                                                                                          <b>14h 30m  0s</b> </pre>
 
-b2d16c8 Refactor discovering of paths when recording events
-Thu Jun 16 11:08:47 2016 -0500 Michael Schenk
-
-       30m 18s  [m] event/event.go
-       12m 31s  [m] event/manager.go
-        3m 14s  [m] project/project.go
-        1m 12s  [r] .git/COMMIT_EDITMSG
-        1m  0s  [r] .git/index
-           25s  [r] event/manager_test.go
-           20s  [r] metric/manager.go
-       49m  0s
-```
-
-**Timeline of time spent by day**
-```
-> gtm report --format timeline -n 3
-
-           0123456789012345678901234
-Fri Jun 24 *                              22m  0s
-Sat Jun 25 **                          1h 28m  0s
-Sun Jun 26 ****                        3h 28m  0s
-Mon Jun 27 *                               4m  0s
-Tue Jun 28 **                          1h 36m  0s
-                                       6h 58m  0s
-```
+GTM is automatic, seamless and lightweight.  There is no need to remember to start and stop timers.  It runs on occasion to capture activity triggered by your editor.  The time metrics are stored locally with the git repository as [Git notes](https://git-scm.com/docs/git-notes) and can be pushed to the remote repository. 
 
 # Support
 
