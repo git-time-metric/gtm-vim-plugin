@@ -7,7 +7,7 @@ if exists('g:gtm_plugin_loaded') || &cp
 endif
 let g:gtm_plugin_loaded = 0
 
-let s:gtm_ver_req = '>= 1.1.0'
+let s:gtm_ver_req = '>= 1.2.1'
 
 let s:no_gtm_err = 'GTM exe not found, install GTM or update your path'
 let s:gtm_ver_err = 'GTM exe is out of date and may not work properly, please install the latest GTM exe'
