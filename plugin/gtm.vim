@@ -61,7 +61,7 @@ function! s:record()
     if v:shell_error
       echomsg s:no_gtm_err
     else
-      let s:gtm_plugin_status = (g:gtm_plugin_status_enabled ? output : '')
+      let s:gtm_plugin_status = (g:gtm_plugin_status_enabled ? substitute(output, '\n\+$', '', '') : '')
     endif
     let s:last_update = localtime()
     let s:last_file = fpath
