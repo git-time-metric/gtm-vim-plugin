@@ -5,7 +5,7 @@
 if exists('g:gtm_plugin_loaded') || &cp
   finish
 endif
-let g:gtm_plugin_loaded = 0
+let g:gtm_plugin_loaded = 1
 
 let s:gtm_ver_req = '>= 1.2.1'
 
@@ -33,7 +33,7 @@ function! s:verify(ver)
     return 1
 endfunction
 
-let g:gtm_verify_version = get(g:, 'gtm_verify_version', 1)
+let g:gtm_verify_version = get(g:, 'gtm_verify_version', 0)
 
 if g:gtm_verify_version == 1 && s:verify(s:gtm_ver_req) == 0
   echomsg '.'
@@ -41,9 +41,6 @@ if g:gtm_verify_version == 1 && s:verify(s:gtm_ver_req) == 0
   echomsg s:gtm_url
   echomsg '.'
 endif
-
-" plug-in is loading successfully
-let g:gtm_plugin_loaded = 1
 
 let g:gtm_plugin_status_enabled = get(g:, 'gtm_plugin_status_enabled', 0)
 
@@ -59,7 +56,7 @@ function! s:record()
     let s:cmd = (g:gtm_plugin_status_enabled == 1 ? 'gtm record --status' : 'gtm record')
     let output=system(s:cmd . ' ' . shellescape(fpath))
     if v:shell_error
-      echomsg s:no_gtm_err
+      echoerr s:no_gtm_err
     else
       let s:gtm_plugin_status = (g:gtm_plugin_status_enabled ? substitute(output, '\n\+$', '', '') : '')
     endif
@@ -74,5 +71,5 @@ endfunction
 
 augroup gtm_plugin
   autocmd!
-  autocmd BufReadPost,BufWritePost,CursorMoved,CursorMovedI * call s:record()
+  autocmd BufReadPost,BufWritePost,CursorMoved,CursorMovedI * silent call s:record()
 augroup END
