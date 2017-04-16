@@ -1,6 +1,8 @@
 <div align="center"><img src="https://cloud.githubusercontent.com/assets/630550/19619834/43c460dc-9835-11e6-8652-1c8fff91cf02.png" alt="GTM Logo" height="115" width="275"></div>
-# <div align="center">Git Time Metric</div>
+<div align="center">Git Time Metric</div>
+
 ### Vim Git Time Metrics (GTM) plug-in
+
 #### Simple, seamless, lightweight time tracking for all your git projects
 
 Git Time Metrics (GTM) is a tool to automatically track time spent reading and working on code that you store in a Git repository. By installing GTM and using supported plug-ins for your favorite editors, you can immediately realize better insight into how you are spending your time and on what files.
